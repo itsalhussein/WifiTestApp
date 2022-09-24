@@ -13,6 +13,10 @@
 		1981BD0428DE454200264B3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1981BD0228DE454200264B3C /* Main.storyboard */; };
 		1981BD0628DE454600264B3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1981BD0528DE454600264B3C /* Assets.xcassets */; };
 		1981BD0928DE454600264B3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1981BD0728DE454600264B3C /* LaunchScreen.storyboard */; };
+		1981BD1128DE46A400264B3C /* WifiInfoServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1981BD1028DE46A400264B3C /* WifiInfoServices.swift */; };
+		1981BD1328DE4A5F00264B3C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1981BD1228DE4A5F00264B3C /* Constants.swift */; };
+		1981BD1728DE4D9F00264B3C /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1981BD1628DE4D9F00264B3C /* ExternalAccessory.framework */; };
+		1981BD1928DE523B00264B3C /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1981BD1828DE523B00264B3C /* HomeKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,11 @@
 		1981BD0528DE454600264B3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1981BD0828DE454600264B3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1981BD0A28DE454600264B3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1981BD1028DE46A400264B3C /* WifiInfoServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiInfoServices.swift; sourceTree = "<group>"; };
+		1981BD1228DE4A5F00264B3C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1981BD1428DE4D9F00264B3C /* WifiTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WifiTest.entitlements; sourceTree = "<group>"; };
+		1981BD1628DE4D9F00264B3C /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		1981BD1828DE523B00264B3C /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1981BD1928DE523B00264B3C /* HomeKit.framework in Frameworks */,
+				1981BD1728DE4D9F00264B3C /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +53,7 @@
 			children = (
 				1981BCFB28DE454200264B3C /* WifiTest */,
 				1981BCFA28DE454200264B3C /* Products */,
+				1981BD1528DE4D9F00264B3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +68,27 @@
 		1981BCFB28DE454200264B3C /* WifiTest */ = {
 			isa = PBXGroup;
 			children = (
+				1981BD1428DE4D9F00264B3C /* WifiTest.entitlements */,
 				1981BCFC28DE454200264B3C /* AppDelegate.swift */,
 				1981BCFE28DE454200264B3C /* SceneDelegate.swift */,
 				1981BD0028DE454200264B3C /* ViewController.swift */,
+				1981BD1028DE46A400264B3C /* WifiInfoServices.swift */,
+				1981BD1228DE4A5F00264B3C /* Constants.swift */,
 				1981BD0228DE454200264B3C /* Main.storyboard */,
 				1981BD0528DE454600264B3C /* Assets.xcassets */,
 				1981BD0728DE454600264B3C /* LaunchScreen.storyboard */,
 				1981BD0A28DE454600264B3C /* Info.plist */,
 			);
 			path = WifiTest;
+			sourceTree = "<group>";
+		};
+		1981BD1528DE4D9F00264B3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1981BD1828DE523B00264B3C /* HomeKit.framework */,
+				1981BD1628DE4D9F00264B3C /* ExternalAccessory.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +162,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1981BD1328DE4A5F00264B3C /* Constants.swift in Sources */,
+				1981BD1128DE46A400264B3C /* WifiInfoServices.swift in Sources */,
 				1981BD0128DE454200264B3C /* ViewController.swift in Sources */,
 				1981BCFD28DE454200264B3C /* AppDelegate.swift in Sources */,
 				1981BCFF28DE454200264B3C /* SceneDelegate.swift in Sources */,
@@ -287,11 +313,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WifiTest/WifiTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 76P85BXFRK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WifiTest/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Application requires user’s location for better user experience.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Application requires user’s location for better user experience.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Application requires user’s location for better user experience.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -302,7 +332,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = conan.WifiTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wifitestapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -315,11 +345,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WifiTest/WifiTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 76P85BXFRK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WifiTest/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Application requires user’s location for better user experience.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Application requires user’s location for better user experience.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Application requires user’s location for better user experience.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -330,7 +364,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = conan.WifiTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wifitestapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
