@@ -52,7 +52,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate{
     func getInfo(){
         if let info = service.getWiFiInfo() {
             // do something with data
-            print("INFO IS : \(info) " )
+            print("NETWORK NAME : \(info.networkName)  -   MAC ADDRESS : \(info.macAddress)  -  RSSI : \(info.rssi) " )
         } else {
             // present alert
             print("INFO IS NOT HERE :( " )
